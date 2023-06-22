@@ -27,5 +27,9 @@ class ownerSeeder extends Seeder
             ],
             // Agrega más elementos de ejemplo aquí
         ];
+
+        foreach ($datosEjemplo as $dato) {
+            owner::create($dato);
+        }
     }
 }

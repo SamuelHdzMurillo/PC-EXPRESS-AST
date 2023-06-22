@@ -37,5 +37,8 @@ class deviceSeeder extends Seeder
             ],
             // Agrega más elementos de ejemplo aquí
         ];
+        foreach ($datosEjemplo as $dato) {
+            device::create($dato);
+        }
     }
 }

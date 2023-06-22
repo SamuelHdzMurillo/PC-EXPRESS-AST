@@ -23,12 +23,11 @@ return new class extends Migration
             $table->string('img');
             $table->string('technican');
 
-            $table->unsignedBigInteger('owner_id');
-            
-            $table->foreign('owner_id')
-                ->references('id')->on('owners')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreignId("owner_id")->nullable()->constrained();
+                
+                
+
+                
 
             $table->timestamps();
             
