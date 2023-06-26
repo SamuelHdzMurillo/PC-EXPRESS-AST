@@ -17,4 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("owner", [OwnerController::class, 'index']);
+
+// RUTAS DEL PROPIETARIO DEL EQUIPO
+Route::get("owners", [OwnerController::class, 'index']);
+
+Route::post("owner", [OwnerController::class, 'store']);
+
+Route::get("owner/$id", [OwnerController::class, 'show']);
+
+

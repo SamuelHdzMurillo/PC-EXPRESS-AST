@@ -12,7 +12,7 @@ class owner extends Model
 
     protected $fillable = [
         'name',
-        'phone number',
+        'phone_number',
         'email'
     ];
 

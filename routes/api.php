@@ -23,4 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //OWNER ROUTS
 
-Route::get("owner", [OwnerController::class, 'index']);
+Route::get("owners", [OwnerController::class, 'index']);
+
+Route::post("owner", [OwnerController::class, 'store']);
+
+Route::get("owner/{$id}", [OwnerController::class, 'show']);
