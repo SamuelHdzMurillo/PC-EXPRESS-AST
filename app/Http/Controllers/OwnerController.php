@@ -34,7 +34,12 @@ class OwnerController extends Controller
     //VER A UN PROPIETARIO SELECIONADO
     public function show($id)
     {
-        $owners = Owner::with('devices')->find($id);
-        return response()->json($owners);
+    $owners = Owner::with('devices')->find($id);
+
+    if (!$owners) {
+        return response()->json(['message' => 'El propietario no existe'], 404);
     }
+
+    return response()->json($owners);
+}
 }

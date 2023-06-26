@@ -19,10 +19,10 @@ Route::get('/', function () {
 
 
 // RUTAS DEL PROPIETARIO DEL EQUIPO
-Route::get("owners", [OwnerController::class, 'index']);
+//Route::get("owners", [OwnerController::class, 'index']);
 
-Route::post("owner", [OwnerController::class, 'store']);
+//Route::post("owner", [OwnerController::class, 'store']);
 
-Route::get("owner/$id", [OwnerController::class, 'show']);
+//Route::get("owner/$id", [OwnerController::class, 'show']);
 
 
