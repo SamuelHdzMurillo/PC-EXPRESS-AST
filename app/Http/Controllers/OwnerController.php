@@ -42,4 +42,22 @@ class OwnerController extends Controller
 
     return response()->json($owners);
 }
+
+// EDITAR UN PROPIETARIO
+public function update(Request $request, $id)
+{
+    $owner = Owner::find($id);
+
+    if (!$owner) {
+        return response()->json(['message' => 'El propietario no existe'], 404);
+    }
+
+    $owner->name = $request->input('name', $owner->name);
+    $owner->phone_number = $request->input('phone_number', $owner->phone_number);
+    $owner->email = $request->input('email', $owner->email);
+
+    $owner->save();
+
+    return response()->json(['message' => 'Propietario actualizado correctamente']);
+}
 }
