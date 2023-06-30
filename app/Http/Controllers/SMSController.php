@@ -35,8 +35,8 @@ class SMSController extends Controller
         }
 
         $message = "¡Hola! Tu dispositivo con ID {$device->id} se encuentra actualmente en reparación.";
-        dd($device->phone_number);
-        $this->sendMessage($device->phone_number, $message);
+        
+        $this->sendMessage($device->owner->phone_number, $message);
 
         return response()->json(['message' => 'Mensaje enviado con éxito']);
     }
@@ -49,10 +49,10 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo con ID {$device->id} ha sido reparado y está listo para su recogida.";
+        $message = "¡Hola! Tu dispositivo con ID {$device->id} ha sido reparado y está listo para su recoleccion.";
 
-        dd($device->phone_number);
-        $this->sendMessage($device->phone_number, $message);
+        
+        $this->sendMessage($device->owner->phone_number, $message);
 
         return response()->json(['message' => 'Mensaje enviado con éxito']);
     }

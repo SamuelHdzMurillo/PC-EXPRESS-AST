@@ -1,81 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Device Ticket</title>
+    <title>Ticket</title>
     <style>
-        /* Estilos CSS para el ticket */
-        /* Agrega aquí los estilos que desees para personalizar el aspecto del ticket */
-        body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 10px;
-}
+        * {
+            font-size: 12px;
+            font-family: 'Times New Roman';
+        }
 
-.ticket {
-  width: 300px;
-  background-color: #ffffff;
-  padding: 20px;
-  border: 2px solid #000000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        .ticket {
+            width: 250px;
+            max-width: 250px;
+            padding: 10px;
+            border: 1px solid #000;
+            margin: 10px;
+        }
 
-.ticket h1 {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 10px;
-}
+        .label {
+            font-weight: bold;
+        }
 
-.ticket p {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
+        .customer-info,
+        .device-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
 
-.ticket .label {
-  font-weight: bold;
-}
-
-.ticket .owner {
-  margin-top: 20px;
-  border-top: 1px dashed #000000;
-  padding-top: 10px;
-}
-
-.ticket .owner p {
-  margin-bottom: 5px;
-}
-
-.ticket .footer {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.ticket .footer p {
-  font-size: 12px;
-  color: #888888;
-}
+        .date {
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-<div class="ticket">
-  <h1>Device Ticket</h1>
-  <p class="label">ID:</p>
-  <p>{{ $device->id }}</p>
-  <p class="label">State:</p>
-  <p>{{ $device->state }}</p>
-  <!-- Agrega aquí el resto de las propiedades del dispositivo -->
+    <div class="ticket">
+        <div class="customer-info">
+            <div>
+                <p class="label">Cliente:</p>
+                <p>{{ $device->owner->name }}</p>
+            </div>
+            <div>
+                <p class="label">Teléfono:</p>
+                <p>{{ $device->owner->phone_number }}</p>
+            </div>
+            <div>
+                <p class="label">Email:</p>
+                <p>{{ $device->owner->email }}</p>
+            </div>
+        </div>
 
-  <div class="owner">
-    <h2>Owner:</h2>
-    <p class="label">Name:</p>
-    <p>{{ $device->owner->name }}</p>
-    <p class="label">Phone Number:</p>
-    <p>{{ $device->owner->phone_number }}</p>
-    <!-- Agrega aquí el resto de la información del propietario -->
-  </div>
+        <div class="device-info">
+            <div>
+                <p class="label">Equipo:</p>
+                <p>{{ $device->brand }}</p>
+            </div>
+            <div>
+                <p class="label">Estado:</p>
+                <p>{{ $device->state }}</p>
+            </div>
+        </div>
 
-  <div class="footer">
-    <p>Thank you for choosing our store!</p>
-  </div>
-</div>
+        <div class="date">
+            <p>{{ $device->created_at }}</p>
+        </div>
+    </div>
 </body>
 </html>
