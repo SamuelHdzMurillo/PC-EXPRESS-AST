@@ -5,20 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Twilio\Rest\Client;
 use App\Models\Device;
+use App\Models\owner;
 
 class SMSController extends Controller
-{
+{   
+    
     public function sendReceivedMessage($id)
     {
         $device = Device::find($id);
+       
 
         if (!$device) {
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
         $message = "¡Hola! Tu dispositivo con ID {$device->id} ha sido recibido correctamente.";
-        dd($device->phone_number);
-        $this->sendMessage($device->phone_number, $message);
+        
+        $this->sendMessage($device->owner->phone_number, $message);
 
         return response()->json(['message' => 'Mensaje enviado con éxito']);
     }
