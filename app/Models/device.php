@@ -24,4 +24,8 @@ class device extends Model
             
             return $this->belongsTo(Owner::class);
     }
+    public function updates()
+    {
+        return $this->hasMany(Update::class);
+    }
 }

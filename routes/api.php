@@ -7,6 +7,7 @@ use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DeviceTicketController;
 use App\Http\Controllers\SMSController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -57,3 +58,10 @@ Route::get('/devices/{id}/in-progress', [SMSController::class, 'sendInProgressMe
 
 // Ruta para enviar mensaje de dispositivo terminado
 Route::get('/devices/{id}/completed', [SMSController::class, 'sendCompletedMessage']);
+
+
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/{id}', [UserController::class, 'show']);
+Route::post('/users', [UserController::class, 'store']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+Route::delete('/users/{id}', [UserController::class, 'destroy']);
