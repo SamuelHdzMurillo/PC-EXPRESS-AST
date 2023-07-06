@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OwnerController;
@@ -8,60 +7,46 @@ use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DeviceTicketController;
 use App\Http\Controllers\SMSController;
 use App\Http\Controllers\UserController;
-
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\UpdateController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//OWNER ROUTES
+// Owner routes
+Route::prefix('owners')->group(function () {
+    Route::get('/', [OwnerController::class, 'index']);
+    Route::post('/', [OwnerController::class, 'store']);
+    Route::get('/{id}', [OwnerController::class, 'show']);
+    Route::put('/{id}', [OwnerController::class, 'update']);
+});
 
-Route::get("owners", [OwnerController::class, 'index']);
+// Device routes
+Route::prefix('devices')->group(function () {
+    Route::get('/', [DeviceController::class, 'index']);
+    Route::post('/', [DeviceController::class, 'store']);
+    Route::get('/{id}', [DeviceController::class, 'show']);
+    Route::put('/{id}', [DeviceController::class, 'update']);
+    Route::get('/{id}/ticket', [DeviceTicketController::class, 'generateTicket']);
+    Route::get('/{id}/received', [SMSController::class, 'sendReceivedMessage']);
+    Route::get('/{id}/in-progress', [SMSController::class, 'sendInProgressMessage']);
+    Route::get('/{id}/completed', [SMSController::class, 'sendCompletedMessage']);
+});
 
-Route::post("owner", [OwnerController::class, 'store']);
+// User routes
+Route::prefix('users')->group(function () {
+    Route::get('/', [UserController::class, 'index']);
+    Route::get('/{id}', [UserController::class, 'show']);
+    Route::post('/', [UserController::class, 'store']);
+    Route::put('/{id}', [UserController::class, 'update']);
+    Route::delete('/{id}', [UserController::class, 'destroy']);
+});
 
-Route::get("owner/{id}", [OwnerController::class, 'show']);
-
-Route::put("owner/{id}", [OwnerController::class, 'update']);
-
-//DEVICE ROUTES
-Route::get('/devices', [DeviceController::class, 'index']);
-
-Route::post('/device', [DeviceController::class, 'store']);
-
-Route::get('/device/{id}', [DeviceController::class, 'show']);
-
-Route::put('/device/{id}', [DeviceController::class, 'update']);
-
-//generar ticekt
-
-Route::get('/devices/{id}/ticket', [DeviceTicketController::class, 'generateTicket']);
-
-//mensajes
-
-// Ruta para enviar mensaje de dispositivo recibido
-Route::get('/devices/{id}/received', [SMSController::class, 'sendReceivedMessage']);
-
-// Ruta para enviar mensaje de dispositivo en reparación
-Route::get('/devices/{id}/in-progress', [SMSController::class, 'sendInProgressMessage']);
-
-// Ruta para enviar mensaje de dispositivo terminado
-Route::get('/devices/{id}/completed', [SMSController::class, 'sendCompletedMessage']);
-
-
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/users/{id}', [UserController::class, 'show']);
-Route::post('/users', [UserController::class, 'store']);
-Route::put('/users/{id}', [UserController::class, 'update']);
-Route::delete('/users/{id}', [UserController::class, 'destroy']);
+// Update routes
+Route::prefix('updates')->group(function () {
+    Route::get('/', [UpdateController::class, 'index']);
+    Route::post('/', [UpdateController::class, 'store']);
+    Route::get('/{update}', [UpdateController::class, 'show']);
+    Route::put('/{update}', [UpdateController::class, 'update']);
+    Route::delete('/{update}', [UpdateController::class, 'destroy']);
+});

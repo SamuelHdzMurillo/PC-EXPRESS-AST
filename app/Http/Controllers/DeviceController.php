@@ -38,7 +38,7 @@ class DeviceController extends Controller
     // VER UN DISPOSITIVO SELECCIONADO
     public function show($id)
     {
-        $device = Device::with('owner')->find($id);
+        $device = Device::with('owner','updates')->find($id);
 
         if (!$device) {
             return response()->json(['message' => 'El dispositivo no existe'], 404);

@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
     {
     $this->call(ownerSeeder::class);
       $this->call(deviceSeeder::class);
+      $this->call(UpdateSeeder::class);
     }
 }
