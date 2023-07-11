@@ -24,25 +24,33 @@ class DeviceController extends Controller
         $device->brand = $request->brand;
         $device->damage = $request->damage;
         $device->accesories = $request->accesories;
-        $device->img = $request->img;
+
+        if ($request->hasFile('img')) {
+            $imagePath = $request->file('img')->store('images', 'public');
+            $device->img = $imagePath;
+        }
+
         $device->technican = $request->technican;
         $device->owner_id = $request->owner_id;
 
         $device->save();
 
         return [
-            'message' => 'Se agregó un dispositivo'
+            'message' => 'Se agregó un dispositivo',
+            'imageUrl' => $device->img ? asset('storage/' . $device->img) : null
         ];
     }
 
     // VER UN DISPOSITIVO SELECCIONADO
     public function show($id)
     {
-        $device = Device::with('owner','updates')->find($id);
+        $device = Device::with('owner', 'updates')->find($id);
 
         if (!$device) {
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
+
+        $device->imageUrl = $device->img ? asset('storage/' . $device->img) : null;
 
         return response()->json($device);
     }
@@ -61,13 +69,18 @@ class DeviceController extends Controller
         $device->brand = $request->input('brand', $device->brand);
         $device->damage = $request->input('damage', $device->damage);
         $device->accesories = $request->input('accesories', $device->accesories);
-        $device->img = $request->input('img', $device->img);
+
+        if ($request->hasFile('img')) {
+            $imagePath = $request->file('img')->store('images', 'public');
+            $device->img = $imagePath;
+        }
+
         $device->technican = $request->input('technican', $device->technican);
         $device->owner_id = $request->input('owner_id', $device->owner_id);
 
         $device->save();
 
-        return response()->json(['message' => 'Dispositivo actualizado correctamente']);
+        return response()->json(['message' => 'Dispositivo actualizado correctamente', 'imageUrl' => $device->img ? asset('storage/' . $device->img) : null]);
     }
 
     // ELIMINAR UN DISPOSITIVO
