@@ -9,10 +9,17 @@ class DeviceController extends Controller
 {
     // MOSTRAR TODOS LOS DISPOSITIVOS
     public function index()
-    {
-        $devices = Device::with('owner')->get();
-        return response()->json($devices);
+{
+    $devices = Device::with('owner')->get();
+
+    // Iterar sobre los dispositivos y agregar la URL de la imagen a cada uno
+    foreach ($devices as $device) {
+        $device->imageUrl = $device->img ? asset('storage/' . $device->img) : null;
     }
+
+    return response()->json($devices);
+}
+
 
     // ALMACENAR UN DISPOSITIVO
     public function store(Request $request)

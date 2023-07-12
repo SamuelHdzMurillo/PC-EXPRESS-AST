@@ -33,6 +33,8 @@ Route::prefix('devices')->group(function () {
     Route::get('/{id}/completed', [SMSController::class, 'sendCompletedMessage']);
 });
 
+Route::put('devices/{id}', [DeviceController::class, 'update']);
+
 // User routes
 Route::prefix('users')->group(function () {
     Route::get('/', [UserController::class, 'index']);
