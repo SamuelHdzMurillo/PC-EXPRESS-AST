@@ -9,13 +9,14 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run()
-    {
+  /**
+   * Seed the application's database.
+   */
+  public function run()
+  {
     $this->call(ownerSeeder::class);
-      $this->call(deviceSeeder::class);
-      $this->call(UpdateSeeder::class);
-    }
+    $this->call(deviceSeeder::class);
+    $this->call(UpdateSeeder::class);
+    $this->call(UserSeeder::class);
+  }
 }

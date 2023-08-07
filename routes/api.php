@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DeviceTicketController;
@@ -12,6 +13,12 @@ use App\Http\Controllers\UpdateController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('auth:sanctum')->post('logout', [AuthController::class, 'logout']);
+
 
 // Owner routes
 Route::prefix('owners')->group(function () {
