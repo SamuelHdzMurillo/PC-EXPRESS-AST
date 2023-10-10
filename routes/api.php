@@ -9,6 +9,8 @@ use App\Http\Controllers\DeviceTicketController;
 use App\Http\Controllers\SMSController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\CatalogController;
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -59,3 +61,5 @@ Route::prefix('updates')->group(function () {
     Route::put('/{update}', [UpdateController::class, 'update']);
     Route::delete('/{update}', [UpdateController::class, 'destroy']);
 });
+
+Route::get('/catalog/owners', [CatalogController::class, 'ownersSelect']);

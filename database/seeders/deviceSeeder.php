@@ -13,7 +13,6 @@ class deviceSeeder extends Seeder
      */
     public function run(): void
     {
-        Device::factory()->count(100)->create();
         //  
         $datosEjemplo = [
             [
@@ -42,6 +41,6 @@ class deviceSeeder extends Seeder
             device::create($dato);
         }
 
-        Device::factory()->count(100)->create();
+    
     }
 }

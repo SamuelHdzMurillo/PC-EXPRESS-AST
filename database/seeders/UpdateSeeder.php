@@ -18,13 +18,16 @@ class UpdateSeeder extends Seeder
         // Obtener algunos dispositivos existentes de la base de datos
         $devices = Device::all();
 
-        // Crear actualizaciones para cada dispositivo
+        // Crear 5 actualizaciones para cada dispositivo
         foreach ($devices as $device) {
-            Update::create([
-                'description' => 'Lorem ipsum dolor sit amet',
-                'images' => ['image1.jpg', 'image2.jpg'],
-                'device_id' => $device->id,
-            ]);
+            for ($i = 1; $i <= 5; $i++) {
+                Update::create([
+                    'title' => 'Lorem ipsum dolor sit amet ' . $i,
+                    'description' => 'Lorem ipsum dolor sit amet',
+                    'images' => ['image1.jpg', 'image2.jpg'],
+                    'device_id' => $device->id,
+                ]);
+            }
         }
     }
 }
