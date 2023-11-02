@@ -22,10 +22,10 @@ class device extends Model
 
     public function owner(){
             
-            return $this->belongsTo(Owner::class);
+            return $this->belongsTo(\App\Models\owner::class);
     }
     public function updates()
     {
-        return $this->hasMany(Update::class);
+        return $this->hasMany(\App\Models\Update::class);
     }
 }
