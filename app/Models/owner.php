@@ -17,7 +17,7 @@ class owner extends Model
     ];
 
     public function devices(){
-        return $this->hasMany(Device::class);
+        return $this->hasMany(device::class);
     }
 
 }
