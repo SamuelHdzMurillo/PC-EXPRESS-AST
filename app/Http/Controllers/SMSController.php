@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Twilio\Rest\Client;
-use App\Models\Device;
+use App\Models\device;
 use App\Models\owner;
 
 class SMSController extends Controller

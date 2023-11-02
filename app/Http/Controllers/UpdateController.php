@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Update;
-use App\Models\Device;
+use App\Models\device;
 use Illuminate\Support\Facades\Storage;
 
 class UpdateController extends Controller

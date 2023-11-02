@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Dompdf\Dompdf;
-use App\Models\Device;
+use App\Models\device;
 
 class DeviceTicketController extends Controller
 {
