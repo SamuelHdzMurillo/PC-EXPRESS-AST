@@ -41,6 +41,24 @@ class SMSController extends Controller
         return response()->json(['message' => 'Mensaje enviado con éxito']);
     }
 
+    private function sendMessage($to, $message)
+    {
+        $sid = env('TWILIO_SID');
+        $token = env('TWILIO_AUTH_TOKEN');
+        $twilioNumber = env('TWILIO_PHONE_NUMBER');
+
+        $client = new Client($sid, $token);
+
+        $client->messages->create(
+            $to,
+            [
+                'from' => $twilioNumber,
+                'body' => $message,
+            ]
+        );
+        return response()->json(['message' => 'Mensaje enviado con éxito']);
+    }
+
     public function sendCompletedMessage($id)
     {
         $device = Device::find($id);
@@ -57,20 +75,5 @@ class SMSController extends Controller
         return response()->json(['message' => 'Mensaje enviado con éxito']);
     }
 
-    private function sendMessage($to, $message)
-    {
-        $sid = env('TWILIO_SID');
-        $token = env('TWILIO_AUTH_TOKEN');
-        $twilioNumber = env('TWILIO_PHONE_NUMBER');
-
-        $client = new Client($sid, $token);
-
-        $client->messages->create(
-            $to,
-            [
-                'from' => $twilioNumber,
-                'body' => $message,
-            ]
-        );
-    }
+   
 }

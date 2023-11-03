@@ -55,8 +55,8 @@ Route::prefix('users')->group(function () {
 
 // Update routes
 Route::prefix('updates')->group(function () {
-    Route::get('/', [UpdateController::class, 'index']);
-    Route::post('/', [UpdateController::class, 'store']);
+    //Route::get('/', [UpdateController::class, 'index']);
+    //Route::post('/', [UpdateController::class, 'store']);
     Route::get('/{update}', [UpdateController::class, 'show']);
     Route::put('/{update}', [UpdateController::class, 'update']);
     Route::delete('/{update}', [UpdateController::class, 'destroy']);
