@@ -28,7 +28,7 @@ class DeviceTicketController extends Controller
         $dompdf->render();
 
         // Generar el nombre del archivo PDF
-        $filename = 'device_ticket_' . $device->id . '.pdf';
+        $filename = 'device_ticket_' . $device->id.'_' . $device->name .'_'. $device->created_at . '.pdf';
 
         // Descargar el archivo PDF
         return $dompdf->stream($filename);
