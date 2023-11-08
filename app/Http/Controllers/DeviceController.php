@@ -10,7 +10,10 @@ class DeviceController extends Controller
     // MOSTRAR TODOS LOS DISPOSITIVOS
     public function index()
 {
-    $devices = Device::with('owner')->get();
+    $devices = Device::with(['owner', 'updates' => function ($query) {
+        $query->orderBy('fecha', 'desc'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
+    }])->get();
+    
 
     // Iterar sobre los dispositivos y agregar la URL de la imagen a cada uno
     foreach ($devices as $device) {
@@ -51,7 +54,10 @@ class DeviceController extends Controller
     // VER UN DISPOSITIVO SELECCIONADO
     public function show($id)
     {
-        $device = Device::with('owner', 'updates')->find($id);
+        $device = Device::with(['owner', 'updates' => function ($query) {
+            $query->orderBy('fecha', 'desc'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
+        }])
+        ->find($id);
 
         if (!$device) {
             return response()->json(['message' => 'El dispositivo no existe'], 404);

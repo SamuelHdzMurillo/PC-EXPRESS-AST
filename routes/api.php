@@ -40,7 +40,7 @@ Route::prefix('devices')->group(function () {
     Route::get('/{id}/received', [SMSController::class, 'sendReceivedMessage']);
     Route::get('/{id}/in-progress', [SMSController::class, 'sendInProgressMessage']);
     Route::get('/{id}/completed', [SMSController::class, 'sendCompletedMessage']);
-    Route::delete('devices/{id}',  [DeviceController::class, 'destroy']);
+    Route::delete('/{id}',  [DeviceController::class, 'destroy']);
 
 });
 
