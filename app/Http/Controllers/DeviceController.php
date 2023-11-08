@@ -11,7 +11,7 @@ class DeviceController extends Controller
     public function index()
 {
     $devices = Device::with(['owner', 'updates' => function ($query) {
-        $query->orderBy('fecha', 'desc'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
+        $query->orderBy('created_at'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
     }])->get();
     
 
@@ -55,7 +55,7 @@ class DeviceController extends Controller
     public function show($id)
     {
         $device = Device::with(['owner', 'updates' => function ($query) {
-            $query->orderBy('fecha', 'desc'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
+            $query->orderBy('created_at'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
         }])
         ->find($id);
 
