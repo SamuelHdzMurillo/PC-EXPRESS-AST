@@ -28,32 +28,24 @@ class UpdateController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+         // Valida y almacena los datos enviados desde el formulario
+         $request->validate([
+            'title' => 'required',
             'description' => 'required',
-            'images' => 'array',
+            'images' => 'required|array',
             'device_id' => 'required|exists:devices,id',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $update = new Update();
-        $update->description = $request->description;
-        $update->device_id = $request->device_id;
+        $update = new Update([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'images' => $request->input('images'),
+            'device_id' => $request->input('device_id'),
+        ]);
+
         $update->save();
 
-        if ($request->hasFile('images')) {
-            $images = [];
-            foreach ($request->file('images') as $image) {
-                $path = $image->store('public/images');
-                $images[] = [
-                    'url' => Storage::url($path),
-                    'path' => $path,
-                ];
-            }
-            $update->images = $images;
-            $update->save();
-        }
-
-        return response()->json(['message' => 'Update created successfully']);
+        return redirect()->route('updates.index')->with('success', 'Update creado correctamente.');
     }
 
     /**
