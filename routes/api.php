@@ -65,3 +65,5 @@ Route::prefix('updates')->group(function () {
 });
 
 Route::get('/catalog/owners', [CatalogController::class, 'ownersSelect']);
+Route::get('/catalog/users', [CatalogController::class, 'UsersSelect']);
+
