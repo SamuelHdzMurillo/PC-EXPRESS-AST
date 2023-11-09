@@ -27,26 +27,39 @@ class UpdateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-         // Valida y almacena los datos enviados desde el formulario
-         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'images' => 'required|array',
-            'device_id' => 'required|exists:devices,id',
-        ]);
+{
+    // Valida y almacena los datos enviados desde el formulario
+    $update = new Update();
+    
+    $deviceExists = Device::where('id', $request->device_id)->exists();
 
-        $update = new Update([
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
-            'images' => $request->input('images'),
-            'device_id' => $request->input('device_id'),
-        ]);
-
-        $update->save();
-
-        return redirect()->route('updates.index')->with('success', 'Update creado correctamente.');
+    if (!$deviceExists) {
+        return response()->json(['error' => 'El device_id no existe en la tabla devices.'], 422);
     }
+    
+    $update->title = $request->title;
+    $update->description = $request->description;
+    $update->device_id = $request->device_id;
+
+    $images = [];
+
+    if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+            $imagePath = $image->store('images', 'public');
+            $images[] = $imagePath;
+        }
+    }
+    
+    $update->images = $images;
+
+    $update->save();
+
+    return [
+        'message' => 'Se agregó una actualizacion',
+        'imageUrl' => $update->images ? asset('storage/' . $update->images) : null
+    ];
+}
+
 
     /**
      * Display the specified update.

@@ -17,6 +17,7 @@ class Update extends Model
      * @var array
      */
     protected $fillable = [
+        'title',
         'description',
         'images',
         'device_id',

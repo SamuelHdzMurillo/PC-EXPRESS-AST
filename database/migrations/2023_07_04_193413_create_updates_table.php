@@ -14,9 +14,9 @@ class CreateUpdatesTable extends Migration
     {
         Schema::create('updates', function (Blueprint $table) {
             $table->id();
-            $table->text('Title');
+            $table->text('title');
             $table->text('description');
-            $table->json('images');
+            $table->json('images')->nullable();
             $table->unsignedBigInteger('device_id');
             $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade');
             $table->timestamps();
