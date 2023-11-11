@@ -11,8 +11,12 @@ class DeviceController extends Controller
     public function index()
 {
     $devices = Device::with(['owner', 'updates' => function ($query) {
-        $query->orderBy('created_at'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
-    }])->get();
+        $query->latest('id'); // Ordena las actualizaciones por ID de forma descendente
+    }])
+    ->orderBy('id', 'desc') // Ordena los dispositivos por ID de forma descendente
+    ->get();
+    
+    
     
 
     // Iterar sobre los dispositivos y agregar la URL de la imagen a cada uno
