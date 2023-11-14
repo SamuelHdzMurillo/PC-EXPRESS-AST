@@ -15,9 +15,6 @@ class DeviceController extends Controller
     }])
     ->orderBy('id', 'desc') // Ordena los dispositivos por ID de forma descendente
     ->get();
-    
-    
-    
 
     // Iterar sobre los dispositivos y agregar la URL de la imagen a cada uno
     foreach ($devices as $device) {
@@ -37,6 +34,9 @@ class DeviceController extends Controller
         $device->device_type = $request->device_type;
         $device->brand = $request->brand;
         $device->damage = $request->damage;
+        $device->model = $request->model;
+        $device->observations = $request->observations;
+
         $device->accesories = $request->accesories;
 
         if ($request->hasFile('img')) {
@@ -86,6 +86,9 @@ class DeviceController extends Controller
         $device->brand = $request->input('brand', $device->brand);
         $device->damage = $request->input('damage', $device->damage);
         $device->accesories = $request->input('accesories', $device->accesories);
+
+        $device->model = $request->input('model', $device->model);
+        $device->observations = $request->input('observations', $device->observations);
 
         if ($request->hasFile('img')) {
             $imagePath = $request->file('img')->store('images', 'public');

@@ -22,15 +22,10 @@ return new class extends Migration
             $table->string('accesories');
             $table->string('img');
             $table->string('technican');
-
+            $table->string('model');
+            $table->string('observations');
             $table->foreignId("owner_id")->nullable()->constrained();
-                
-                
-
-                
-
             $table->timestamps();
-            
             
         });
     }

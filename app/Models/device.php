@@ -17,7 +17,10 @@ class device extends Model
         'accesories',
         'img',
         'technican',
-        'owner_id'
+        'owner_id',
+        'model',
+        'observations',
+
     ];
 
     public function owner(){

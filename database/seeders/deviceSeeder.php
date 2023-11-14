@@ -22,6 +22,8 @@ class deviceSeeder extends Seeder
                 'damage' => 'pantalla rota',
                 'accesories' => 'cargador, auriculares',
                 'img' => 'imagen1.jpg',
+                'model' => 'predator x21x',
+                'observations' => 'visagras bien',
                 'technican' => 'Juan Pérez',
                 'owner_id' => 1
             ],
@@ -32,6 +34,8 @@ class deviceSeeder extends Seeder
                 'damage' => 'batería descargada',
                 'accesories' => 'cargador',
                 'img' => 'imagen2.jpg',
+                'model' => 'predator x21x',
+                'observations' => 'visagras bien',
                 'technican' => 'María Gómez',
                 'owner_id' => 2
             ],
