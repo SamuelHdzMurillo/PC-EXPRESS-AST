@@ -18,9 +18,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::post('/login', [AuthController::class, 'login']);
+
 Route::middleware('auth:sanctum')->post('logout', [AuthController::class, 'logout']);
 
+// Rutas para obtener todos los usuarios y crear uno nuevo
+Route::get('/users', [UserController::class, 'index']);
+Route::post('/users', [UserController::class, 'store']);
+
+// Rutas para mostrar, actualizar y eliminar un usuario específico
+Route::get('/users/{id}', [UserController::class, 'show']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
 // Owner routes
 Route::prefix('owners')->group(function () {
@@ -44,7 +52,7 @@ Route::prefix('devices')->group(function () {
 
 });
 
-Route::put('devices/{id}', [DeviceController::class, 'update']);
+
 
 // User routes
 Route::prefix('users')->group(function () {
