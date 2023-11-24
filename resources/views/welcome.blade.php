@@ -67,7 +67,7 @@
 
     <section class="section">
       <h2>Nuestros Clientes Satisfechos</h2>
-      <p>Los testimonios de nuestros clientes respaldan nuestro compromiso con la excelencia y la satisfacción del cliente. [Agrega aquí algunos testimonios o comentarios de clientes, si los tienes]</p>
+      <p>Los testimonios de nuestros clientes respaldan nuestro compromiso con la excelencia y la satisfacción del cliente. </p>
     </section>
   </div>
 
