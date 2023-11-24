@@ -24,7 +24,7 @@ class UpdateSeeder extends Seeder
                 Update::create([
                     'title' => 'Lorem ipsum dolor sit amet ' . $i,
                     'description' => 'Lorem ipsum dolor sit amet',
-                    'images' => ['image1.jpg', 'image2.jpg'],
+                    'images' => 'image1.jpg',
                     'device_id' => $device->id,
                 ]);
             }

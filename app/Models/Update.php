@@ -28,9 +28,7 @@ class Update extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'images' => 'json',
-    ];
+    
 
     /**
      * Get the device that the update belongs to.

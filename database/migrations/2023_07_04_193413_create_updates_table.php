@@ -16,7 +16,7 @@ class CreateUpdatesTable extends Migration
             $table->id();
             $table->text('title');
             $table->text('description');
-            $table->json('images')->nullable();
+            $table->string('images')->nullable();
             $table->unsignedBigInteger('device_id');
             $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade');
             $table->timestamps();

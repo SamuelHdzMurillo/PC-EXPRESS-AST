@@ -15,10 +15,17 @@ class UpdateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $updates = Update::with('device')->get();
-        return response()->json($updates);
+{
+    $updates = Update::with('device')->get();
+
+    foreach ($updates as $update) {
+        // Verifica si la propiedad 'images' existe en la actualización
+        $update->imageUrl = $update->images ? asset('storage/' . $update->images) : null;
     }
+
+    return response()->json($updates);
+}
+
 
     /**
      * Store a newly created update in the database.
@@ -41,16 +48,10 @@ class UpdateController extends Controller
     $update->description = $request->description;
     $update->device_id = $request->device_id;
 
-    $images = [];
-
     if ($request->hasFile('images')) {
-        foreach ($request->file('images') as $image) {
-            $imagePath = $image->store('images', 'public');
-            $images[] = $imagePath;
-        }
+        $imagePath = $request->file('images')->store('images', 'public');
+        $update->images = $imagePath;
     }
-    
-    $update->images = $images;
 
     $update->save();
 
@@ -59,6 +60,7 @@ class UpdateController extends Controller
         'imageUrl' => $update->images ? asset('storage/' . $update->images) : null
     ];
 }
+
 
 
     /**

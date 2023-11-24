@@ -19,10 +19,24 @@ class DeviceController extends Controller
     // Iterar sobre los dispositivos y agregar la URL de la imagen a cada uno
     foreach ($devices as $device) {
         $device->imageUrl = $device->img ? asset('storage/' . $device->img) : null;
+
+        // Iterar sobre las actualizaciones y agregar la URL de la imagen a cada una
+        foreach ($device->updates as $update) {
+            // Verificar si la propiedad 'images' es una cadena de texto
+            if (is_string($update->images)) {
+                $update->imgurl = asset('storage/' . $update->images);
+            } else {
+                // Si es un array, puedes manejarlo según tu lógica
+                // En este caso, se deja el campo 'imgurl' como nulo
+                $update->imgurl = null;
+            }
+        }
     }
 
     return response()->json($devices);
 }
+
+
 
 
     // ALMACENAR UN DISPOSITIVO
@@ -57,20 +71,32 @@ class DeviceController extends Controller
 
     // VER UN DISPOSITIVO SELECCIONADO
     public function show($id)
-    {
-        $device = Device::with(['owner', 'updates' => function ($query) {
-            $query->orderBy('created_at'); // Reemplaza 'fecha' con el nombre de tu columna de fecha
-        }])
-        ->find($id);
+{
+    $device = Device::with(['owner', 'updates' => function ($query) {
+        $query->orderBy('created_at');
+    }])->find($id);
 
-        if (!$device) {
-            return response()->json(['message' => 'El dispositivo no existe'], 404);
-        }
-
-        $device->imageUrl = $device->img ? asset('storage/' . $device->img) : null;
-
-        return response()->json($device);
+    if (!$device) {
+        return response()->json(['message' => 'El dispositivo no existe'], 404);
     }
+
+    // Agregar la URL de la imagen del dispositivo
+    $device->imageUrl = $device->img ? asset('storage/' . $device->img) : null;
+
+    // Agregar la URL de la imagen para cada actualización
+    foreach ($device->updates as $update) {
+        // Verificar si 'images' es una cadena de texto
+        if (is_string($update->images)) {
+            $update->imgurl = asset('storage/' . $update->images);
+        } else {
+            // Si 'images' no es una cadena de texto, asignar un valor nulo a 'imgurl'
+            $update->imgurl = null;
+        }
+    }
+
+    return response()->json($device);
+}
+
 
     // EDITAR UN DISPOSITIVO
     public function update(Request $request, $id)
