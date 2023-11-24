@@ -61,23 +61,21 @@
         </header>
 
         
-
+       
         <!-- Sección de servicios -->
         <div class="row half-and-half">
             <div class="col-md-6">
                 <div class="p-4">
-                    <h2>Ofrecemos servicios de alta calidad</h2>
+                    <h2><a href="https://www.mrtienda.net/mrtimbre">mrtienda</a></h2>
                     <p>
-                        En PC EXPRESS nos dedicamos a brindar soluciones tecnológicas avanzadas para satisfacer las necesidades de nuestros clientes.
-                        Ofrecemos servicios de instalación, mantenimiento y soporte técnico para hogares y empresas.
+                    Sistema punto de venta que permite manejar diferentes giros comerciales, desde pequeñas tiendas hasta cadenas con un gran número de puntos de venta.
                     </p>
                     <p>
-                        Contamos con un equipo altamente capacitado para proporcionar servicios de vigilancia, instalación de sistemas de punto de venta, suministro de consumibles y más.
-                    </p>
+                    Es un sistema punto de venta que permite manejar diferentes giros comerciales, desde pequeñas tiendas hasta cadenas con un gran número de puntos de venta. Nuestros giros comerciales más usuales son tiendas de abarrotes, farmacias, tiendas de ropa, tiendas de conveniencia, carnicerías, minisúper, ferreterías, tiendas de discos, librerías, vinaterías y tiendas de especialidades, entre otros.                     </p>
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="https://imgs.search.brave.com/BuUKcWo-fcDOIoZ2BUyWN8Jw2KDvR1RzlXUKdci1TOo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90aGVu/ZXR3b3JraW5zdGFs/bGVycy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDQv/TmV0d29yay1JbnN0/YWxsYXRpb24tRW5n/aW5lZXItMTAyNHg2/ODMuanBn" alt="Imagen de Servicios" class="img-fluid">
+                <img src="https://le-cdn.website-editor.net/s/d6e72deac36d4a8fbe6e042aedd8fdbe/dms3rep/multi/opt/Admin+2-1920w.png?Expires=1703440692&Signature=nBn~xFHslJotYxtCZa-6LCoCgHAQoSIoCQI-0eyK3sbI3K2pkuTaMTKU11a1YSav1AO8i3s9WFcT4YfmAyy1USSvscI6LxqMawEjJZnHIjvQz5v0bf7-e5RAEvlChFDYhfg6WekEEghf8~9D4dbrpY7bajgajIuCTiWiCnIWg2GOwjZn~izJwmvysa6rT5NwYVvoypnzzDOWwU450g0KZ7LZ-vO46B6pgrUkpx9D91L7cGEt0XlWtvl2teiruHL8k0vzRvwiUSfmc~RxlGwwx1HmCf00XO2P~uVeQ~rppalJEc-8SdsnhI64rBD2oUcV1n~2c8ipOPkT~joBX7o-yQ__&Key-Pair-Id=K2NXBXLF010TJW" alt="Imagen de Servicios" class="img-fluid">
             </div>
         </div>
 
@@ -117,7 +115,43 @@ Lenovo Thinkpad T470s Laptop empresarial - 20HF0012US 14 FHD, i5-7300U 2.6GHz, 8
             </div>
         </div>
         <div class="container mt-5">
+
+        <div class="row half-and-half">
+            <div class="col-md-6">
+            <img src="https://le-cdn.website-editor.net/s/d6e72deac36d4a8fbe6e042aedd8fdbe/dms3rep/multi/opt/MRTIMBRE+22-1920w.png?Expires=1702861802&Signature=Cj7xryY1EHCFZ0jzr5sEWrCDRuwLgHTSC4QaMd4m4hDB4f2NCySZimicbbXI~caqGCfurEWP0aPklF6OS9uXKfwA4RIEo6K2mubDmWuvpgW8~En8ugfZY4MNa0p9X-ua1xMLz5JZAm7qJ3abXvlIsbyd0FXb-fHjw2GCepusSkuNi1R6b0rcyjE0drslXC6nZ~4an~6V2O3FDHfYZUAnhmFeiWyLl5xmrr2HmKB~ABkQUZ~Qm-5BcXvCKoUSmpsRQJw-Jw8qgIx1uaYxnS0AcHl4zCo-9kLkJEJEZUPZqY3GPejhmHHymbmf9gwhza~e1W5RNS9ALKr~~eVKlC~tTg__&Key-Pair-Id=K2NXBXLF010TJW" alt="Imagen de Servicios" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+            <div class="p-4">
+                    <h2><a href="https://www.mrtienda.net/mrtimbre574a7688">MrTimbre</a></h2>
+                    <p>
+                    Sistema para facturación electrónica Versión 3.3 del SAT, fácil de usar y sin importar el giro o tamaño de tu negocio.                     </p>
+                    <p>
+                    Es un programa para facturación electrónica. Genera tus comprobantes fiscales de una forma práctica y sencilla desde tu computadora, donde puedes tener el control de tus cuentas por cobrar, emitir complementos de pago, cancelación de facturas, crear catalogo de productos y servicios, ademas puedes descargar de manera masiva los documentos CFDI y reportes.</div>
+                   
+                
+            </div>
+        </div>
+
         <h1 class="text-center mb-4">Servicios de Soporte Técnico</h1>
+
+        <div class="row half-and-half">
+            <div class="col-md-6">
+            <img src="https://imgs.search.brave.com/BuUKcWo-fcDOIoZ2BUyWN8Jw2KDvR1RzlXUKdci1TOo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90aGVu/ZXR3b3JraW5zdGFs/bGVycy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDQv/TmV0d29yay1JbnN0/YWxsYXRpb24tRW5n/aW5lZXItMTAyNHg2/ODMuanBn" alt="Imagen de Servicios" class="img-fluid">
+
+            </div>
+            <div class="col-md-6">
+            <div class="p-4">
+                    <h2>Ofrecemos servicios de alta calidad</h2>
+                    <p>
+                        En PC EXPRESS nos dedicamos a brindar soluciones tecnológicas avanzadas para satisfacer las necesidades de nuestros clientes.
+                        Ofrecemos servicios de instalación, mantenimiento y soporte técnico para hogares y empresas.
+                    </p>
+                    <p>
+                        Contamos con un equipo altamente capacitado para proporcionar servicios de vigilancia, instalación de sistemas de punto de venta, suministro de consumibles y más.
+                    </p>
+                </div>
+            </div>
+        </div>
 
         
 
