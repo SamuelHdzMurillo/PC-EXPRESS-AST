@@ -21,8 +21,8 @@ class ownerSeeder extends Seeder
                 'email' => 'juan@example.com',
             ],
             [
-                'name' => 'María Gómez',
-                'phone_number' => '9876543210',
+                'name' => 'samuel hernandez',
+                'phone_number' => '+526121172745',
                 'email' => 'maria@example.com',
             ],
             // Agrega más elementos de ejemplo aquí

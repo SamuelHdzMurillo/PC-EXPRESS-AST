@@ -19,7 +19,7 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo con ID {$device->id} ha sido recibido correctamente.";
+        $message = "¡Hola! Tu dispositivo {$device->device_type} fue recibido por {$device->technican} pronto pasara a revision!, Puedes ver el progreso en tiempo real en:  https://www.pcexpressbcs.com.mx/api/devices/{$device->id}";
         
         $this->sendMessage($device->owner->phone_number, $message);
 
@@ -34,7 +34,7 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo con ID {$device->id} se encuentra actualmente en reparación.";
+        $message = "¡Hola! Tu dispositivo {$device->device_type} se encuentra actualmente en reparación. Entra para mas detalles en:  https://www.pcexpressbcs.com.mx/api/devices/{$device->id}";
         
         $this->sendMessage($device->owner->phone_number, $message);
 
@@ -67,7 +67,7 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo con ID {$device->id} ha sido reparado y está listo para su recoleccion.";
+        $message = "¡Hola! Tu dispositivo {$device->device_type} a nombre de {$device->owner->name}  ha sido reparado y está listo para su recoleccion. Entra para mas detalles en:  https://www.pcexpressbcs.com.mx/api/devices/{$device->id}";
 
         
         $this->sendMessage($device->owner->phone_number, $message);
