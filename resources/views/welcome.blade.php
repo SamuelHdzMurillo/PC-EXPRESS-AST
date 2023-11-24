@@ -66,7 +66,7 @@
         <div class="row half-and-half">
             <div class="col-md-6">
                 <div class="p-4">
-                    <h2><a href="https://www.mrtienda.net/mrtimbre">mrtienda</a></h2>
+                    <h2><a href="https://www.mrtienda.net/mrtimbre">MrTienda</a></h2>
                     <p>
                     Sistema punto de venta que permite manejar diferentes giros comerciales, desde pequeñas tiendas hasta cadenas con un gran número de puntos de venta.
                     </p>
