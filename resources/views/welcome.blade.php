@@ -136,10 +136,7 @@ Lenovo Thinkpad T470s Laptop empresarial - 20HF0012US 14 FHD, i5-7300U 2.6GHz, 8
 
         <div class="row half-and-half">
             <div class="col-md-6">
-            <img src="https://imgs.search.brave.com/BuUKcWo-fcDOIoZ2BUyWN8Jw2KDvR1RzlXUKdci1TOo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90aGVu/ZXR3b3JraW5zdGFs/bGVycy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDQv/TmV0d29yay1JbnN0/YWxsYXRpb24tRW5n/aW5lZXItMTAyNHg2/ODMuanBn" alt="Imagen de Servicios" class="img-fluid">
 
-            </div>
-            <div class="col-md-6">
             <div class="p-4">
                     <h2>Ofrecemos servicios de alta calidad</h2>
                     <p>
@@ -150,6 +147,11 @@ Lenovo Thinkpad T470s Laptop empresarial - 20HF0012US 14 FHD, i5-7300U 2.6GHz, 8
                         Contamos con un equipo altamente capacitado para proporcionar servicios de vigilancia, instalación de sistemas de punto de venta, suministro de consumibles y más.
                     </p>
                 </div>
+
+            </div>
+            <div class="col-md-6">
+            <img src="https://imgs.search.brave.com/BuUKcWo-fcDOIoZ2BUyWN8Jw2KDvR1RzlXUKdci1TOo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90aGVu/ZXR3b3JraW5zdGFs/bGVycy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDQv/TmV0d29yay1JbnN0/YWxsYXRpb24tRW5n/aW5lZXItMTAyNHg2/ODMuanBn" alt="Imagen de Servicios" class="img-fluid">
+
             </div>
         </div>
 
