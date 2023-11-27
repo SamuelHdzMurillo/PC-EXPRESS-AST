@@ -58,11 +58,7 @@
 </head>
 <body>
     <div class="ticket">
-        <div class="header">
-            <h2>PC EXPRESS</h2>
-            <div>Dirección: Calle del Agua 101</div>
-            <div>Cel: 6121401985 | Oficina: 6121282006</div>
-        </div>
+        
         
         <div class="section">
             <div style="font-weight: bold; margin-bottom: 5px;">Datos de Ingreso:</div>
@@ -77,7 +73,6 @@
             <div class="section-info">
                 <div><span>Nombre:</span> {{ $device->owner->name }}</div>
                 <div><span>Número de Teléfono:</span> {{ $device->owner->phone_number }}</div>
-                <div><span>Correo Electrónico:</span> {{ $device->owner->email }}</div>
             </div>
         </div>
         
@@ -97,6 +92,7 @@
         <div class="section-info">
             <div><span>Daño:</span> {{ $device->damage }}</div>
             <div><span>Accesorios:</span> {{ $device->accesories }}</div>
+            <div><span>Observaciones:</span> {{ $device->Observations }}</div>
             </div>
         </div>
         
