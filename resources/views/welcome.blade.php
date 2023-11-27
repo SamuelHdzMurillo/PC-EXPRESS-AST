@@ -6,12 +6,17 @@
     <title>PC Express - Landing Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         /* Estilos adicionales */
         body {
             background-color: #121212;
             color: #fff;
         }
+
+        
 
         .navbar {
             background-color: #0d6efd !important;
@@ -46,12 +51,25 @@
             height: auto;
         }
         
+        
     </style>
 </head>
 
 <body>
     <!-- Barra de navegación -->
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button class="btn btn-primary"><a class="nav-link" href="https://pcexpressadmin-wffil.ondigitalocean.app/" target="_blank">Iniciar session</a></button>
+      </li>
+    </ul>
+  </div>
+</nav>
     <!-- Contenido principal -->
     <div class="container mt-4">
         <!-- Encabezado -->
