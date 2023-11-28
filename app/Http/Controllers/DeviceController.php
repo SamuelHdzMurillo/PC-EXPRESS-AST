@@ -49,6 +49,7 @@ class DeviceController extends Controller
         $device->brand = $request->brand;
         $device->damage = $request->damage;
         $device->model = $request->model;
+        $device->serial = $request->serial;
         $device->observations = $request->observations;
 
         $device->accesories = $request->accesories;
@@ -114,6 +115,7 @@ class DeviceController extends Controller
         $device->accesories = $request->input('accesories', $device->accesories);
 
         $device->model = $request->input('model', $device->model);
+        $device->serial = $request->input('serial', $device->serial);
         $device->observations = $request->input('observations', $device->observations);
 
         if ($request->hasFile('img')) {

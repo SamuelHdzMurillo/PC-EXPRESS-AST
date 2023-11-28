@@ -35,7 +35,7 @@ Route::prefix('owners')->group(function () {
     Route::get('/', [OwnerController::class, 'index']);
     Route::post('/', [OwnerController::class, 'store']);
     Route::get('/{id}', [OwnerController::class, 'show']);
-    Route::put('/{id}', [OwnerController::class, 'update']);
+    Route::post('/{id}', [OwnerController::class, 'update']);
 });
 
 // Device routes
@@ -43,7 +43,7 @@ Route::prefix('devices')->group(function () {
     Route::get('/', [DeviceController::class, 'index']);
     Route::post('/', [DeviceController::class, 'store']);
     Route::get('/{id}', [DeviceController::class, 'show']);
-    Route::put('/{id}', [DeviceController::class, 'update']);
+    Route::post('/{id}', [DeviceController::class, 'update']);
     Route::get('/{id}/ticket', [DeviceTicketController::class, 'generateTicket']);
     Route::get('/{id}/received', [SMSController::class, 'sendReceivedMessage']);
     Route::get('/{id}/in-progress', [SMSController::class, 'sendInProgressMessage']);

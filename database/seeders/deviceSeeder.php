@@ -16,28 +16,56 @@ class deviceSeeder extends Seeder
         //  
         $datosEjemplo = [
             [
-                'state' => 'activo',
-                'device_type' => 'teléfono',
-                'brand' => 'Samsung',
-                'damage' => 'pantalla rota',
-                'accesories' => 'cargador, auriculares',
+                'state' => 'Recibido',
+                'device_type' => 'laptop',
+                'brand' => 'hp',
+                'damage' => 'mantenimiento , cliente refiere se le cayo',
+                'accesories' => 'sin accesorios',
                 'img' => 'imagen1.jpg',
-                'model' => 'predator x21x',
-                'observations' => 'visagras bien',
-                'technican' => 'Juan Pérez',
-                'owner_id' => 1
+                'model' => 'touch',
+                'serial' => '1',
+                'observations' => 'pantalla estrellada, inicia muy lento, sin cargador. sin cables, cliente solicita respaldo de informacion',
+                'technican' => 'admin',
+                'owner_id' => 3
             ],
             [
-                'state' => 'inactivo',
-                'device_type' => 'tableta',
-                'brand' => 'Apple',
-                'damage' => 'batería descargada',
-                'accesories' => 'cargador',
+                'state' => 'Recibido',
+                'device_type' => 'PC',
+                'brand' => 'ACER',
+                'damage' => 'NO PRENDE',
+                'accesories' => 'NO TRAE',
                 'img' => 'imagen2.jpg',
-                'model' => 'predator x21x',
-                'observations' => 'visagras bien',
-                'technican' => 'María Gómez',
-                'owner_id' => 2
+                'model' => 'AIO',
+                'serial' => 'AIO1128',
+                'observations' => 'equipo un dia no prendio',
+                'technican' => 'admin',
+                'owner_id' => 3
+            ],
+            [
+                'state' => 'Terminado',
+                'device_type' => 'Impresoras',
+                'brand' => 'Epson',
+                'damage' => 'Mantenimiento',
+                'accesories' => 'SIN ACCESORIOAS',
+                'img' => 'imagen2.jpg',
+                'model' => 'L1110',
+                'serial' => 'l11102823',
+                'observations' => 'PARPADEA LUZ ROJA',
+                'technican' => 'admin',
+                'owner_id' => 4
+            ],
+            [
+                'state' => 'Terminado',
+                'device_type' => 'Impresoras',
+                'brand' => 'EPSON',
+                'damage' => 'ALMOHADILLAS',
+                'accesories' => 'SIN ACCESORIOAS',
+                'img' => 'imagen2.jpg',
+                'model' => 'L3110',
+                'serial' => 'L31102723',
+                'observations' => 'ALMOHADILLAS',
+                'technican' => 'admin',
+                'owner_id' => 5
             ],
             // Agrega más elementos de ejemplo aquí
         ];
