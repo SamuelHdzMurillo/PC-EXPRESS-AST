@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('technican');
             $table->string('model');
             $table->string('observations');
+            $table->string('serial');
             $table->foreignId("owner_id")->nullable()->constrained();
             $table->timestamps();
             

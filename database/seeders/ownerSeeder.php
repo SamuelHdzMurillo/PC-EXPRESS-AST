@@ -16,15 +16,31 @@ class ownerSeeder extends Seeder
         //
         $datosEjemplo = [
             [
-                'name' => 'octavio lopez',
+                'name' => 'OCTAVIO LOPEZ',
                 'phone_number' => '+526121401985',
                 'email' => 'juan@example.com',
             ],
             [
-                'name' => 'samuel hernandez',
+                'name' => 'SAMUEL HERNANDEZ',
                 'phone_number' => '+526121172745',
                 'email' => 'maria@example.com',
             ],
+            [
+                'name' => 'ELISA JIMENEZ',
+                'phone_number' => '+526121981476',
+                'email' => '',
+            ],
+            [
+                'name' => 'ELVIRA TORRES',
+                'phone_number' => '+526121071829',
+                'email' => '',
+            ],
+            [
+                'name' => 'MARTIN VENTURA',
+                'phone_number' => '+526121007640',
+                'email' => '',
+            ],
+            
             // Agrega más elementos de ejemplo aquí
         ];
 

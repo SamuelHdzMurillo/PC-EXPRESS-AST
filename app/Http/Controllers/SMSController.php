@@ -67,7 +67,7 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo {$device->device_type} a nombre de {$device->owner->name}  ha sido reparado y está listo para su recoleccion. Entra para mas detalles en:  https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id}";
+        $message = "¡Hola! Tu dispositivo {$device->device_type} a nombre de {$device->owner->name}  ha sido reparado y está listo para su recoleccion. Entra para mas detalles en:  https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id} O Visita nuestro sitio web para mas ofertas!!";
 
         
         $this->sendMessage($device->owner->phone_number, $message);

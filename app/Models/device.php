@@ -19,6 +19,7 @@ class device extends Model
         'technican',
         'owner_id',
         'model',
+        'serial',
         'observations',
 
     ];

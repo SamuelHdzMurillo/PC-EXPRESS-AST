@@ -92,7 +92,7 @@
         <div class="section-info">
             <div><span>Daño:</span> {{ $device->damage }}</div>
             <div><span>Accesorios:</span> {{ $device->accesories }}</div>
-            <div><span>Observaciones:</span> {{ $device->Observations }}</div>
+            <div><span>Observaciones:</span> {{ $device->observations }}</div>
             </div>
         </div>
         

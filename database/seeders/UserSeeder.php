@@ -16,14 +16,14 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'name' => 'John Doe',
-                'email' => 'john@example.com',
-                'password' => bcrypt('password123'), // Recuerda que el password debe estar encriptado
+                'name' => 'ADMIN',
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('admin123'), // Recuerda que el password debe estar encriptado
             ],
             [
-                'name' => 'Jane Smith',
-                'email' => 'jane@example.com',
-                'password' => bcrypt('securepassword'),
+                'name' => 'samuel hernandez',
+                'email' => 'beliko@gmail.com',
+                'password' => bcrypt('belico123'),
             ],
             // Agrega más usuarios ficticios aquí
         ];
