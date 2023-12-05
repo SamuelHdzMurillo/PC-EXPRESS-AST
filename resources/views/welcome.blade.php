@@ -99,7 +99,7 @@
       .container {
         background-color: #131312;
         padding: 1rem;
-        border-radius: 5%;
+        border-radius: 1%;
       }
       .text p {
         color: white;
@@ -131,6 +131,9 @@
         --bs-card-bg: dddddd;
         padding: 1rem;
         margin: 1rem;
+      }
+      .navbar-dark .navbar-toggler-icon {
+        background-color: #1e1e1f;
       }
     </style>
   </head>
@@ -216,6 +219,29 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+    </div>
+
+    <div id="servicios-section" class="container mt-4">
+      <div class="row">
+        <div class="col-12 text-center" style="color: #0c6efc">
+          <h2>Productos en Venta</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <img src="{{asset('img/ASPIRE 3 GIF.gif')}}" class="img-fluid" alt="Service 1" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <img src="{{asset('img/ASUS.gif')}}" class="img-fluid" alt="Service 2" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <img src="{{asset('img/ASUS TUF.gif')}}" class="img-fluid" alt="Service 3" />
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="mrtienda-section" class="container mt-4">
@@ -332,6 +358,9 @@
 
     <div id="servicios-section" class="container mt-4">
       <div class="row">
+      <div class="col-12 text-center" style="color: #0c6efc">
+          <h2>Productos en Venta</h2>
+        </div>
         <div class="col-md-4">
           <div class="card service-card">
             <img
