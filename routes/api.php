@@ -16,7 +16,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::delete('/devices/{device_id}/updates/{update_id}', [UpdateController::class,'deleteUpdateByDeviceAndId']);
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('logout', [AuthController::class, 'logout']);
@@ -71,6 +71,9 @@ Route::prefix('updates')->group(function () {
     Route::put('/{update}', [UpdateController::class, 'update']);
     Route::delete('/{update}', [UpdateController::class, 'destroy']);
 });
+
+
+
 
 Route::get('/catalog/owners', [CatalogController::class, 'ownersSelect']);
 Route::get('/catalog/users', [CatalogController::class, 'UsersSelect']);

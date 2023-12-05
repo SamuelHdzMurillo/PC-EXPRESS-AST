@@ -187,7 +187,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="{{ asset('img/banner.gif') }}"
+            src="{{ asset('img/CORECCION FB.gif') }}"
             class="d-block w-100"
             alt="Placeholder Image 1"
           />
@@ -359,7 +359,7 @@
     <div id="servicios-section" class="container mt-4">
       <div class="row">
       <div class="col-12 text-center" style="color: #0c6efc">
-          <h2>Productos en Venta</h2>
+          <h2>Servicios</h2>
         </div>
         <div class="col-md-4">
           <div class="card service-card">

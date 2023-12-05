@@ -130,16 +130,20 @@ class UpdateController extends Controller
         return response()->json(['message' => 'Update deleted successfully']);
     }
 
-    /**
-     * Delete the images associated with an update.
-     *
-     * @param  \App\Models\Update  $update
-     * @return void
-     */
-    protected function deleteImages(Update $update)
-    {
-        foreach ($update->images as $image) {
-            Storage::delete($image['path']);
-        }
+    public function deleteUpdateByDeviceAndId($device_id, $update_id)
+{
+    $update = Update::where('device_id', $device_id)->find($update_id);
+
+    if (!$update) {
+        return response()->json(['message' => 'Update not found for this device.'], 404);
     }
+
+
+    // Eliminar la actualización
+    $update->delete();
+
+    return response()->json(['message' => 'Update deleted successfully']);
+}
+
+    
 }
