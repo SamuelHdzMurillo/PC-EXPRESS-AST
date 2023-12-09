@@ -19,7 +19,7 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo {$device->device_type} fue recibido por {$device->technican} pronto pasara a revision!, Puedes ver el progreso en tiempo real en: https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id}";
+        $message = "¡Hola! Tu dispositivo pronto pasara a revision!, Puedes ver el progreso en tiempo real en: https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id}";
         
         $this->sendMessage($device->owner->phone_number, $message);
 
@@ -34,7 +34,7 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo {$device->device_type} se encuentra actualmente en reparación. EntraA para mas detalles en:  https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id}";
+        $message = "¡Hola! Tu dispositivo se encuentra actualmente en reparación. Entra para mas detalles en:  https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id}";
         
         $this->sendMessage($device->owner->phone_number, $message);
 
@@ -67,7 +67,7 @@ class SMSController extends Controller
             return response()->json(['message' => 'El dispositivo no existe'], 404);
         }
 
-        $message = "¡Hola! Tu dispositivo {$device->device_type} a nombre de {$device->owner->name}  ha sido reparado y está listo para su recoleccion. Entra para mas detalles en:  https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id} O Visita nuestro sitio web para mas ofertas!!";
+        $message = "¡Hola! Tu dispositivo ha sido reparado y está listo para su recoleccion. Entra para mas detalles en:  https://pcexpressadmin-wffil.ondigitalocean.app/#/devices/{$device->id}";
 
         
         $this->sendMessage($device->owner->phone_number, $message);
