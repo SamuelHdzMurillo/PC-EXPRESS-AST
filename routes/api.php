@@ -45,6 +45,7 @@ Route::prefix('devices')->group(function () {
     Route::get('/{id}', [DeviceController::class, 'show']);
     Route::post('/{id}', [DeviceController::class, 'update']);
     Route::get('/{id}/ticket', [DeviceTicketController::class, 'generateTicket']);
+    Route::get('/{id}/ticketOrder', [DeviceTicketController::class, 'generateServiceOrder']);
     Route::get('/{id}/received', [SMSController::class, 'sendReceivedMessage']);
     Route::get('/{id}/in-progress', [SMSController::class, 'sendInProgressMessage']);
     Route::get('/{id}/completed', [SMSController::class, 'sendCompletedMessage']);

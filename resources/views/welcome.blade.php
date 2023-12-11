@@ -221,7 +221,7 @@
       </button>
     </div>
 
-    <div id="servicios-section" class="container mt-4">
+    <div  class="container mt-4">
       <div class="row">
         <div class="col-12 text-center" style="color: #0c6efc">
           <h2>Productos en Venta</h2>
