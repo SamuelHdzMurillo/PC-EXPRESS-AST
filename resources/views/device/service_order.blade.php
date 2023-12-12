@@ -28,7 +28,7 @@
 
     <table width="100%">
         <tr>
-            <td valign="center"><img src="https://www.pcexpressbcs.com.mx/storage/images/pBewXKXpcndUKFwGG1zbKxK5v8Udq5eK6xYrr1us.jpg"alt="imagne logo" width="750"/></td>
+            <td valign="center"><img src="https://www.pcexpressbcs.com.mx/storage/images/pWYxsOzkv8qorodIWb73gRBX5kGjAWN6wy7z0ltm.jpg"alt="imagne logo" width="750"/></td>
             <td align="center">
                 
             </td>
